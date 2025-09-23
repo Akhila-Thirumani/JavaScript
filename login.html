@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            width:400px;
+            
+        }
+        .space{
+            display: flex;
+            margin-bottom: 12px;
+
+           
+        }
+        .space label{
+            width:100px;
+            font-weight: bold;
+        }
+        .space input{
+            flex: 1;
+            padding:5px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="form">
+    <form id="login">
+    
+    <div class="space"><label for="username">Username:</label>
+    <input type="text" id="username" placeholder="username" >
+    </div>
+    
+   
+    <div class="space">
+
+    
+    <label for="password">password</label>
+    
+    <input type="password" id="password" placeholder="password"> 
+    </div>
+    <div class="space">
+    <input type="submit" value="submit" id="submit">
+    </div>
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const username = document.getElementById("username");
+  const password = document.getElementById("password");
+  
+  const form = document.getElementById("login");
+
+  // When user enters all three fields → remove password field
+ 
+
+  // On form submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop actual submission
+    alert("your login is succesfully completed ");
+    form.reset(); // reset form
+    
+  });
+});
+    </script>
