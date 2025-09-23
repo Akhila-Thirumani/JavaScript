@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            width:400px;
+            
+        }
+        .space{
+            display: flex;
+            margin-bottom: 12px;
+
+           
+        }
+        .space label{
+            width:100px;
+            font-weight: bold;
+        }
+        .space input{
+            flex: 1;
+            padding:5px;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <div class="form">
+    <form id="register_form">
+    
+    <div class="space"><label for="username">Username:</label>
+    <input type="text" id="username" placeholder="username" >
+    </div>
+    
+   
+    <div class="space">
+
+    
+    <label for="email">email:</label>
+    
+    <input type="email" id="email" placeholder="example@gmail.com"> 
+    </div>
+    <div class="space">
+    <label for ="phone" for="phone">Phone no:</label><br>
+    <input type="tel" id="phone">
+    </div>
+    <div class="space">
+    <input type="submit" value="submit" id="submit">
+    </div>
+    </form >
+</div>
+<script>
+   document.addEventListener("DOMContentLoaded", function () {
+  const username = document.getElementById("username");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  
+  const form = document.getElementById("register_form");
+
+  // When user enters all three fields → remove password field
+  function checkInputs() {
+    if (username.value.trim() !== "" && email.value.trim() !== "" && phone.value.trim() !== "") {
+    }
+}
+     
+
+  username.addEventListener("input", checkInputs);
+  email.addEventListener("input", checkInputs);
+  phone.addEventListener("input", checkInputs);
+
+  // On form submit
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop actual submission
+    alert("Form submitted successfully ✅");
+    form.reset(); // reset form
+    
+  });
+});
+    </script>
+</body>
+</html>
